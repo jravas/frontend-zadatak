@@ -100,10 +100,28 @@ module.exports = function(grunt) {
                     spawn: false
                 }
             }
+        },
+
+        responsive_images: {
+            options: {
+                engine: 'im',
+                sizes: [{
+                    width:320,
+                    quality: 90
+              }]
+            },
+            files: {
+                expand: true,
+                cwd: 'public/images/gallery/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: 'public/images/gallery/'
+            }
         }
     });
 
     require('load-grunt-tasks')(grunt);
+
+    grunt.loadNpmTasks('grunt-responsive-images');
 
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', ['jshint', 'jscs', 'sass', 'includereplace', 'sync']);

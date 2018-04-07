@@ -7,13 +7,13 @@ module.exports = View.extend({
     events: {
 
         // load litebox plugin after user clicks on image
-        'click a': function(e) {
+        'click .sidebarGalleryJs a': function(e) {
 
             e.preventDefault();
 
             let that = this
 
-            var $items = $('.sidebarGallery a');
+            var $items = $('.sidebarGalleryJs a');
 
             require.ensure([], function(callback) {
 

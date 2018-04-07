@@ -11245,13 +11245,13 @@
 	    events: {
 
 	        // load litebox plugin after user clicks on image
-	        'click a': function(e) {
+	        'click .sidebarGalleryJs a': function(e) {
 
 	            e.preventDefault();
 
 	            let that = this
 
-	            var $items = $('.sidebarGallery a');
+	            var $items = $('.sidebarGalleryJs a');
 
 	            __webpack_require__.e/* nsure */(2, function(callback) {
 

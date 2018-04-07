@@ -476,6 +476,7 @@ th {
   display: block;
   z-index: -1;
   box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.6);
+  background-color: #FFF;
 }
 
 .slbImage {
@@ -1674,6 +1675,24 @@ body {
   .listModuleType2 {
     border-radius: 0.4em;
   }
+}
+
+.sidebarGallery ul li {
+  display: inline-block;
+  margin: 0.5em 0.5em;
+}
+
+.sidebarGallery ul li:first-child {
+  margin-top: 0.5em;
+}
+
+.sidebarGallery ul li a {
+  display: inline-block;
+}
+
+.sidebarGallery ul li a img {
+  width: 75px;
+  height: 45px;
 }
 
 .articleListType1 {

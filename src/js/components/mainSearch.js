@@ -1,7 +1,5 @@
 var View = require('jquery-simple-view');
 
-// require('fastsearch');
-
 module.exports = View.extend({
 
     events: {

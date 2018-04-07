@@ -110,6 +110,7 @@
 	var View = __webpack_require__(3);
 	var MainNav = __webpack_require__(6);
 	var MainSearch = __webpack_require__(7);
+	var SidebarGallery = __webpack_require__(9)
 
 	module.exports = View.extend({
 
@@ -134,6 +135,7 @@
 
 	        this.mainNav = this.addView(new MainNav({$el: $('.mainNav')}));
 	        this.mainSearch =  this.addView(new MainSearch({$el: $('.mainSearch')}));
+	        this.sidebarGallery = this.addView(new SidebarGallery({$el: $('.sidebarGallery')}));
 
 	        return this;
 
@@ -141,9 +143,9 @@
 
 	    showLoginModal: function(e) {
 
-	        __webpack_require__.e/* nsure */(1, function() {
+	        __webpack_require__.e/* nsure */(3, function() {
 
-	            var LoginModal = __webpack_require__(9);
+	            var LoginModal = __webpack_require__(11);
 	            new LoginModal();
 
 	        });
@@ -11203,8 +11205,6 @@
 
 	var View = __webpack_require__(3);
 
-	// require('fastsearch');
-
 	module.exports = View.extend({
 
 	    events: {
@@ -11214,7 +11214,7 @@
 
 	            let that = this
 	            
-	            __webpack_require__.e/* nsure */(2, function() {
+	            __webpack_require__.e/* nsure */(1, function() {
 
 	                var fastsearch = __webpack_require__(8);
 	                
@@ -11230,6 +11230,45 @@
 
 	});
 
+
+/***/ }),
+/* 8 */,
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(2);
+	var View = __webpack_require__(3);
+
+
+	module.exports = View.extend({
+	    
+	    events: {
+
+	        // load litebox plugin after user clicks on image
+	        'click a': function(e) {
+
+	            e.preventDefault();
+
+	            let that = this
+
+	            var $items = $('.sidebarGallery a');
+
+	            __webpack_require__.e/* nsure */(2, function(callback) {
+
+	                var simpleLightbox = __webpack_require__(10);
+
+	                $.SimpleLightbox.open({
+	                    $items: $items,
+	                    startAt: $items.index($(e.target).parent()),
+	                    bindToItems: false
+	                });
+
+	            })
+	            
+	        }
+	    }
+
+	});
 
 /***/ })
 /******/ ]);

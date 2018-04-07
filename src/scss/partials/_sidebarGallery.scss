@@ -1,0 +1,18 @@
+.sidebarGallery {
+    ul {
+        li {
+            display: inline-block;
+            margin: 0.5em 0.5em;
+            &:first-child {
+                margin-top: 0.5em;
+            }
+            a {
+                display: inline-block;
+                img {
+                    width: 75px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+}

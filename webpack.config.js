@@ -1,17 +1,27 @@
-var path = require('path');
+const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: {
-        homepage: './src/js/bundles/homepage.js'
-    },
+    entry: './src/js/bundles/homepage.js',
     output: {
-        path: 'public/js/bundles',
-        filename: '[name].js',
-        publicPath: "js/bundles/"
+        path: path.resolve(__dirname, 'public/js/bundles'),
+        publicPath: 'js/bundles/',
+        filename: '[name].bundle.js'
     },
-    resolve: {
-        root: [
-            path.resolve('./src')
+    plugins: [
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        })
+    ],
+    module: {
+        rules:[
+            {
+                test:/\.(s*)css$/,
+                use:[MiniCssExtractPlugin.loader,'css-loader','sass-loader']
+            }
         ]
     }
 };

@@ -2,6 +2,7 @@
   "name": "trikoder-frontend-zadatak",
   "version": "1.0.0",
   "scripts": {
+    "test": "webpack --mode development",
     "watch:development": "grunt & webpack --watch --progress --colors",
     "build:development": "grunt build & webpack --progress --colors",
     "start": "concurrent --raw \"npm run build:development\" \"npm run watch:development\" \"node server.js\" \"opn http://localhost:9000\""
@@ -10,6 +11,7 @@
     "bourbon": "^4.2.6",
     "concurrent": "^0.3.2",
     "concurrently": "^1.0.0",
+    "css-loader": "^0.28.11",
     "express": "^4.13.4",
     "fastsearch": "^1.9.1",
     "grunt": "^0.4.5",
@@ -24,10 +26,14 @@
     "jquery": ">1.11",
     "jquery-simple-view": "^2.0.2",
     "load-grunt-tasks": "^0.6.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.8.3",
     "normalize.css": "~3.0.3",
     "opn-cli": "^1.0.0",
     "pelinkovac": "~0",
+    "sass-loader": "^6.0.7",
     "simple-lightbox": "^1.2.8",
-    "webpack": "^1.12.12"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
   }
 }

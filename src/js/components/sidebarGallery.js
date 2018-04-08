@@ -16,7 +16,11 @@ module.exports = View.extend({
             var $items = $('.sidebarGalleryJs a');
 
             require.ensure([], function(callback) {
+                
+                //load styles
+                require('simple-lightbox/dist/simpleLightbox.css')
 
+                // load lite box
                 var simpleLightbox = require('simple-lightbox');
 
                 $.SimpleLightbox.open({

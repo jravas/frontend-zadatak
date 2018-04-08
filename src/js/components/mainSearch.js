@@ -11,6 +11,9 @@ module.exports = View.extend({
             
             require.ensure([], function() {
 
+                // load styles
+                require('../../scss/partials/_fastSearch.scss')
+
                 var fastsearch = require('fastsearch');
                 
                 that.$('.query').fastsearch({

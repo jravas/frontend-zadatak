@@ -1,8 +1,8 @@
-var $ = require('jquery');
+var $ = require('jquery');var $ = require('jquery');
 var View = require('jquery-simple-view');
-var MainNav = require('js/components/mainNav');
-var MainSearch = require('js/components/mainSearch');
-var SidebarGallery = require('js/components/sidebarGallery')
+var MainNav = require('../components/mainNav');
+var MainSearch = require('../components/mainSearch');
+var SidebarGallery = require('../components/sidebarGallery')
 
 module.exports = View.extend({
 
@@ -37,7 +37,7 @@ module.exports = View.extend({
 
         require.ensure([], function() {
 
-            var LoginModal = require('js/components/loginModal');
+            var LoginModal = require('../components/loginModal');
             new LoginModal();
 
         });

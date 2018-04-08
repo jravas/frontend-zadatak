@@ -1,3 +1,3 @@
-var HomepageController = require('js/controllers/homepage');
+var HomepageController = require('../controllers/homepage');
 
 new HomepageController({$el: 'body'});
